@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Çiçekler ve Anlamları</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  /* Üstten başlaması için justify-content değiştirildi */
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 5px black;
+  text-align: center;
+  padding: 20px;
+  font-family: sans-serif;
+  position: relative;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  /* Mesajın üstte kalması için biraz boşluk */
+  margin-top: 20px;
+}
+
+#flower-meaning {
+  background-color: rgba(0,0,0,0.5);
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  max-width: 600px;
+  margin-top: auto; /* Alt kısımda kalması için */
+  margin-bottom: 40px; /* Alt boşluk */
+}
+  </style>
+</head>
+<body>
+  <h1>“Kalbimde açan her çiçek sana fısıldıyor.”</h1>
+  <p id="flower-meaning">Yükleniyor...</p>
+
+  <script>
+    const meanings = [
+      "Kırmızı gül, tutkulu bir aşkın ve özlemin simgesidir.",
+      "Beyaz gül, masumiyetin ve saf sevginin ifadesidir.",
+      "Lale, zarif ve sade bir aşkın temsilcisidir.",
+      "Ayçiçeği, sadakat ve hayranlığı temsil eder.",
+      "Zambak, temizliği ve yeniden doğuşu simgeler.",
+      "Orkide, zarafetin ve nadir güzelliklerin sembolüdür.",
+      "Papatya, masumiyeti ve çocukça sevgiyi yansıtır.",
+      "Menekşe, bağlılığı ve sadakati simgeler.",
+      "Karanfil, gizli aşkı ve tutkuyu ifade eder.",
+      "Nergis, hayranlık ve saygıyı anlatır.",
+      "Mimoza, hassasiyetin ve şefkatin çiçeğidir.",
+      "Fulya, yeni başlangıçları temsil eder.",
+      "Levantin, uzaktan duyulan hayranlık demektir.",
+      "Begonya, içten gelen sevgiyi anlatır.",
+      "Şakayık, romantizm ve refahı simgeler.",
+      "Ortanca, minnettarlığın simgesidir.",
+      "Sümbül, sebat ve sabrı temsil eder.",
+      "Yasemin, zarif ve tutkulu bir sevgiyi ifade eder.",
+      "Cam güzeli, iç huzuru ve sükuneti anlatır.",
+      "Lavanta, huzur ve rahatlamanın simgesidir."
+    ];
+
+    const randomIndex = Math.floor(Math.random() * 20);
+    const imagePath = `images/flower${randomIndex + 1}.jpg`;
+
+    document.body.style.backgroundImage = `url('${imagePath}')`;
+    document.getElementById("flower-meaning").innerText = meanings[randomIndex];
+  </script>
+</body>
+</html>
